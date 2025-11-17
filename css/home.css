@@ -1,4 +1,4 @@
-.hero-banner{
+.hero-banner {
     background-image: url(/assets/Banner_image.png);
     height: 500px;
     background-repeat: no-repeat;
@@ -7,5 +7,28 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    padding:64px;
+    padding: 64px;
+}
+
+.hero-content>h1 {
+    color: var(--text-white);
+    text-shadow: var(--text-shadow);
+    font-size: clamp(32, 4vw, 70px);
+}
+
+.hero-content>a {
+    color:var(--text-white);
+    background-color: black;
+    border-radius: 32px;
+    text-decoration: none;
+    font-weight: 800;
+    padding:16px;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:16px;
+    
 }
