@@ -70,3 +70,25 @@
     padding-bottom: 8px
 }
 
+.home-section{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+.yellow{
+    background-color: var(--yellow);
+
+    border-radius: 0px 0px 128px 128px;
+    
+
+}
+.cream-bg{
+    background-color: var(--cream);
+}
+
+.blue{
+    background-color: var(--blue-light);
+    border-radius:  128px 128px 0px 0px;
+}
