@@ -172,3 +172,32 @@
     }
     
 }
+
+.arrivals{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    
+}
+.arrival{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    background-color: var(--text-white);
+    border-radius: 8px;;
+}
+.arrival-name{
+    background-color: var(--text-black);
+    color: var(--text-white);
+    border-radius: 0px 0px 8px 8px;
+    padding: 8px;
+}
+.newest-arrival-page{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    >h1{
+        text-decoration: underline;
+    }
+
+}
