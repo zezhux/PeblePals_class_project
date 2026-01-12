@@ -15,9 +15,18 @@ const nav_buttons = [
 
 //handle home page separately
 
+
 function is_this_active(page_name){
     let url = window.location.href;
     let found =url.search(page_name.toLowerCase());
+    
+    if(url == "http://127.0.0.1:5500/" || url=="https://127.0.0.1:5500/index.html"){
+        if(page_name == "HOME"){
+            return true;
+        }
+    }
+    
+    
     if(found > 0){
         return true;
     } else{
