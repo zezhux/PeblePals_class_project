@@ -18,13 +18,11 @@ const nav_buttons = [
 function is_this_active(page_name){
     let url = window.location.href;
     let found =url.search(page_name.toLowerCase());
-    if(found){
+    if(found > 0){
         return true;
     } else{
         return false;
     }
-    }
-
 }
 
 let nav_container = document.getElementById("desktop-nav")
