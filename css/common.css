@@ -202,3 +202,8 @@ body {
     justify-content: center;
 
 }
+
+.cloud-section {
+    background: #90B7BF;
+    background: linear-gradient(90deg,rgba(144, 183, 191, 1) 0%, rgba(103, 161, 188, 1) 50%);
+}
