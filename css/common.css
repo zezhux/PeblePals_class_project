@@ -206,4 +206,22 @@ body {
 .cloud-section {
     background: #90B7BF;
     background: linear-gradient(90deg,rgba(144, 183, 191, 1) 0%, rgba(103, 161, 188, 1) 50%);
+    position: relative;
+}
+
+.cloud{
+    position: absolute;
+}
+.cloud.left{
+    top: 16px;
+    left: 0;
+}
+.cloud.right{
+    right: 0;
+    top: 32px;
+}
+
+.cloud.small{
+    left: 33%;
+    top: 16px;
 }
