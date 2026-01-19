@@ -65,4 +65,5 @@ for (let review of testimonialList) {
         `
 
     testimonialsBox.innerHTML += testimonialToAdd;
+
 }
