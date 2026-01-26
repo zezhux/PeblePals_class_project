@@ -1,5 +1,7 @@
 // FOR LATER, IGNORE FOR NOW
-const testimonialList = [
+
+//IF we don't have local testimonials, these will be loaded by default.
+let testimonialList = [
     {
         "rating": 4,
         "name": "Bobbi",
@@ -32,15 +34,32 @@ const testimonialList = [
     }
 ]
 
-let testimonialsBox = document.getElementById("testimonials-box");
+// the function will load testimonials, if nothing is saved, used defaults
+function loadTestimonials() {
+    let loaded = JSON.parse(localStorage.getItem("testimonials"))
 
+    if (loaded) {
+        return loaded
+    } else {
+        return testimonialList
+    }
+}
+
+//Display testimonials to the screen
+function saveTestimonials() {
+    localStorage.setItem("testimonials", JSON.stringify(testimonialList));
+}
+
+testimonialList = loadTestimonials();
+let testimonialsBox = document.getElementById("testimonials-box");
+// Draw the loaded testimnoials to the screen
 for (let review of testimonialList) {
-    drawNewTestimonial(review.name, review.review, review.rating)
+    drawNewTestimonial(review.name, review.review, review.rating);
 
 }
 
 let tForm = document.getElementById("t-form");
-function addTestimonial(event){
+function addTestimonial(event) {
     event.preventDefault();
 
     let name = document.getElementById("t-name").value;
@@ -48,22 +67,31 @@ function addTestimonial(event){
     let rating = document.querySelector('input[name = rating]:checked').value;
 
     drawNewTestimonial(name, message, rating)
+
+
+    // adds a formatted testimonial to our list, then saves list to local storage
+    testimonialList.push({
+        "rating": rating,
+        "name": name,
+        "review": message
+    })
+    saveTestimonials();
 }
 
 tForm.addEventListener("submit", addTestimonial)
 
-function drawNewTestimonial(name, message, rating){
-    let stars =""
-    for (let i=0; i < 5; i++){
-        if  (i < rating){
+function drawNewTestimonial(name, message, rating) {
+    let stars = ""
+    for (let i = 0; i < 5; i++) {
+        if (i < rating) {
             stars += `<img class="star-img" src="/assets/star_yellow.svg">`
         }
-        else{
+        else {
             stars += `<img class="star-img" src="/assets/star_black.svg">`
         }
     }
 
-    
+
     let testimonialToAdd = `
         <div class="testimonial">
                     <div class="t-rating-row">
